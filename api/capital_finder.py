@@ -3,7 +3,6 @@ import requests
 from http.server import BaseHTTPRequestHandler
  
 class handler(BaseHTTPRequestHandler):
- 
     def do_GET(self):
         s = self.path
         url_componant = parse.urlsplit(s) # split the url
@@ -30,10 +29,6 @@ class handler(BaseHTTPRequestHandler):
 
         else:
             msg = 'hello from the other side stranger'
-        
-
-
-
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
